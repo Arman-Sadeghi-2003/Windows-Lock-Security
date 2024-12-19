@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\AILC Logo 2.ico</ApplicationIcon>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageReleaseNotes>Made by AILC company.</PackageReleaseNotes>
+    <PackageIcon>AILC Logo copy.png</PackageIcon>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <Copyright>AILC COMPANY</Copyright>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\AILC Logo 2.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\AILC Logo 2.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\AILC Logo 2.ico" />
+    <Resource Include="Assets\AILC Logo copy.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\AILC Logo copy.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Assets\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
