@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
@@ -12,6 +13,8 @@ namespace WindowsLockSecurity
     public partial class MainWindow : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
+        private bool canClose = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -21,6 +24,12 @@ namespace WindowsLockSecurity
             timer.Interval = TimeSpan.FromSeconds(10);
             timer.Tick += Timer_Tick;
             timer.Start();
+        }
+        
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            e.Cancel = !canClose;
         }
 
         private void SetRegister()
@@ -46,6 +55,7 @@ namespace WindowsLockSecurity
         {
             if (e.Key == Key.K)
             {
+                canClose = true;
                 Application.Current.Shutdown();
             }
         }
